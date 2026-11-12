@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhanesh Rajpurkar</title>
+<meta name="description" content="Dhanesh Rajpurkar — Electrical Engineering student at UCF. Hardware, embedded systems, CAD, and AI projects.">
+<meta property="og:title" content="Dhanesh Rajpurkar — EE @ UCF">
+<meta property="og:description" content="Hardware + software builder. Projects, achievements, and resume.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><!-- loads in the background; never blocks the page -->
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script>
+  (function () {
+    var d = document.documentElement;
+    try { var t = localStorage.getItem('theme'); if (t) d.dataset.theme = t; } catch (e) {}
+    try { if (window.top === window && sessionStorage.getItem('handNav') === 'on') d.classList.add('shell'); } catch (e) {}
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var seen = false;
+    try { seen = sessionStorage.getItem('introSeen') === '1'; sessionStorage.removeItem('viaDoor'); } catch (e) {}
+    if (!seen && !reduce && !d.classList.contains('shell')) d.classList.add('intro'); // lock intro plays once per visit
+    var reelSeen = false; try { reelSeen = sessionStorage.getItem('reelSeen') === '1'; } catch (e) {}
+    if (d.classList.contains('intro') && !reelSeen) d.classList.add('reel');           // space reel plays before it
+  })();
+</script>
+<script src="site.js" defer></script>
+<script src="media/eyes.js" defer></script>
+<script src="reel.js" defer></script>
+<script src="lab.js" defer></script>
+<script src="elevator.js" defer></script>
+<script src="gesture-core.js" defer></script>
+<script src="handcam.js" defer></script>
+<script src="handnav.js" defer></script>
+<script src="gesture.js" defer></script>
+<script src="media/demo-data.js" defer></script>
+<script src="demo.js" defer></script>
+</head>
+<body class="home">
+
+<div id="reel" aria-hidden="true" title="Click to skip">
+  <canvas></canvas>
+  <div class="reel-skip">click or press any key to skip</div>
+</div>
+
+<div id="intro" aria-hidden="true" title="Click to skip">
+  <div class="idoor l"></div>
+  <div class="idoor r"></div>
+  <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+    <path class="tr" pathLength="1" d="M0 500 H300 L340 545 H440"/>
+    <path class="tr" pathLength="1" d="M1000 500 H700 L660 545 H560"/>
+    <path class="tr dim" pathLength="1" d="M1000 820 H800 L740 760 H690"/>
+    <path class="tr" pathLength="1" d="M620 0 V180 L560 240 V300"/>
+    <path class="tr dim" pathLength="1" d="M0 800 H180 L240 740 H330"/>
+    <path class="tr dim" pathLength="1" d="M1000 240 H820 L760 300 H680"/>
+    <circle class="pad" cx="440" cy="545" r="7"/>
+    <circle class="pad" cx="560" cy="545" r="7"/>
+    <circle class="pad" cx="690" cy="760" r="6"/>
+    <circle class="pad" cx="560" cy="300" r="6"/>
+    <circle class="pad" cx="330" cy="740" r="6"/>
+    <circle class="pad" cx="680" cy="300" r="6"/>
+    <!-- the iris ring the opening scene dives into; traces charge it, then it opens -->
+    <circle class="iris-glow" cx="500" cy="545" r="95"/>
+    <circle class="iris-core" cx="500" cy="545" r="38"/>
+    <g class="iris-spokes"><line x1="543.0" y1="545.0" x2="555.0" y2="545.0"/><line x1="537.2" y1="566.5" x2="547.6" y2="572.5"/><line x1="521.5" y1="582.2" x2="527.5" y2="592.6"/><line x1="500.0" y1="588.0" x2="500.0" y2="600.0"/><line x1="478.5" y1="582.2" x2="472.5" y2="592.6"/><line x1="462.8" y1="566.5" x2="452.4" y2="572.5"/><line x1="457.0" y1="545.0" x2="445.0" y2="545.0"/><line x1="462.8" y1="523.5" x2="452.4" y2="517.5"/><line x1="478.5" y1="507.8" x2="472.5" y2="497.4"/><line x1="500.0" y1="502.0" x2="500.0" y2="490.0"/><line x1="521.5" y1="507.8" x2="527.5" y2="497.4"/><line x1="537.2" y1="523.5" x2="547.6" y2="517.5"/></g>
+    <circle class="iris-ring" cx="500" cy="545" r="60" pathLength="1"/>
+    <text class="cap a" x="500" y="660">DHANESH.R // UNLOCKING</text>
+    <text class="cap b" x="500" y="660">ACCESS GRANTED</text>
+  </svg>
+  <div class="skip">click or press any key to skip</div>
+</div>
+
+<nav>
+  <div class="wrap">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">◐ theme</button>
+  </div>
+</nav>
+
+<main>
+  <!-- The 3D workshop (lab.js) is drawn behind this text; the text stays real HTML so it's crisp and readable by everyone. -->
+  <header class="hero lab-hero" id="lab">
+    <div class="lab-scrim" aria-hidden="true"></div>
+    <div class="hero-copy wrap">
+      <h1>Dhanesh Rajpurkar</h1>
+      <p class="hero-school">University of Central Florida</p>
+      <!-- Your quote: edit the text inside <p> and the name inside <cite>. -->
+      <blockquote class="hero-quote" id="heroQuote"><p>“A man who has patience and experience, can do anything.”</p><cite>— Baron Zemo</cite></blockquote>
+    </div>
+    <a class="lab-down call" href="#hallway" aria-label="Call the elevator down to the Rotunda Doors"><span class="call-btn">▼</span><small>B1</small></a>
+  </header>
+
+  <section id="hallway" class="hallway" aria-labelledby="hallTitle">
+    <div class="wrap">
+      <div class="hall-head"><span class="num floor-tag">B1</span><h2 id="hallTitle">The Rotunda Doors</h2><a class="call up" href="#lab" aria-label="Take the elevator back up to the lab"><span class="call-btn">▲</span><small>Lab</small></a></div>
+    </div>
+
+    <div class="rotunda" id="rotunda" tabindex="-1">
+      <div class="world" id="world">
+        <div class="floor" aria-hidden="true"></div>
+
+      <a class="door" href="projects.html" data-door>
+        <span class="room" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+          <span>Projects</span>
+        </span>
+        <span class="panel"><span class="plaque"><b>01</b><strong>Projects</strong></span><span class="knob"></span></span>
+      </a>
+
+      <a class="door" href="achievements.html" data-door>
+        <span class="room" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M9 17h6"/></svg>
+          <span>Achievements</span>
+        </span>
+        <span class="panel"><span class="plaque"><b>02</b><strong>Achievements</strong></span><span class="knob"></span></span>
+      </a>
+
+      <a class="door" href="resume.html" data-door>
+        <span class="room" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 12h7M9 16h7"/></svg>
+          <span>Resume</span>
+        </span>
+        <span class="panel"><span class="plaque"><b>03</b><strong>Resume</strong></span><span class="knob"></span></span>
+      </a>
+
+      <a class="door" href="contact.html" data-door>
+        <span class="room" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span>Contact</span>
+        </span>
+        <span class="panel"><span class="plaque"><b>04</b><strong>Contact</strong></span><span class="knob"></span></span>
+      </a>
+        <!-- the armory: two armored suits in display alcoves, one each side of the doors. Pictures live in media/armory/ (swap in your own renders, same file names) -->
+        <div class="pod" aria-hidden="true" style="--a:84deg;--suit:#565e68;--suit2:#23272d;--glow:#5ff0d8">
+          <div class="alc"><i class="alc-back"></i><i class="alc-side l"></i><i class="alc-side r"></i><i class="alc-top"><i class="pod-lights"></i></i><i class="alc-floor"></i><i class="pod-plinth"></i><img class="suit" src="media/armory/suit-eva.webp" alt="" loading="lazy"><i class="alc-frame"></i></div>
+          <i class="pod-post l"></i><i class="pod-post r"></i>
+          <span class="pod-tag"><b>MK·EVA</b>Deep-space EVA</span>
+        </div>
+        <div class="pod" aria-hidden="true" style="--a:-84deg;--suit:#c9ced5;--suit2:#5f6670;--glow:#ffb257">
+          <div class="alc"><i class="alc-back"></i><i class="alc-side l"></i><i class="alc-side r"></i><i class="alc-top"><i class="pod-lights"></i></i><i class="alc-floor"></i><i class="pod-plinth"></i><img class="suit" src="media/armory/suit-lunar.webp" alt="" loading="lazy"><i class="alc-frame"></i></div>
+          <i class="pod-post l"></i><i class="pod-post r"></i>
+          <span class="pod-tag"><b>MK·LUNAR</b>Lunar surface</span>
+        </div>
+      </div>
+      <div class="vignette" aria-hidden="true"></div>
+      <button class="turn l" type="button" aria-label="Turn left">‹</button>
+      <button class="turn r" type="button" aria-label="Turn right">›</button>
+      <p class="hint" id="hint">hover a door to turn toward it · click to walk through</p>
+
+      <div class="demo" id="demo" hidden>
+        <div class="demo-card" role="dialog" aria-label="How to unlock the doors">
+          <div class="demo-head"><b>How to unlock the doors</b><button class="demo-x" type="button" aria-label="Close">×</button></div>
+          <canvas id="demoView" aria-label="Two hands performing the unlock gesture"></canvas>
+          <ol class="demo-steps"><li><b>1</b> Separate</li><li><b>2</b> Moving</li><li><b>3</b> Eye</li></ol>
+          <p class="demo-tip" id="demoTip"></p>
+          <button class="btn primary" id="demoTry" type="button">Try it: enable camera</button>
+        </div>
+      </div>
+
+      <div class="gate" id="gate">
+        <div class="gate-card" id="gateCard">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          <div>
+            <h3>Sealed doors</h3>
+            <p>Turn on your camera. Steer with an open palm, then perform the unlock with both hands.</p>
+            <button class="btn primary" id="camBtn" type="button">Enable camera</button>
+            <button class="btn" id="demoBtn" type="button">▶ Watch how it's done</button>
+            <p class="fine" id="gateMsg">Hand tracking runs only in your browser. Your video is never uploaded or saved.</p>
+          </div>
+        </div>
+        <div class="gate-hud" id="hud" hidden>
+          <canvas id="camView" width="240" height="180" aria-label="Your camera, with tracked hands"></canvas>
+          <div>
+            <ol class="steps">
+              <li><b>1</b> Separate <span>wrists crossed · fingers spread wide</span><i></i></li>
+              <li><b>2</b> Moving <span>swing hands around each other and apart</span><i></i></li>
+              <li><b>3</b> Eye <span>fingertips meet on top · thumbs below</span><i></i></li>
+            </ol>
+            <p class="hud-note" id="hudNote">raise a hand into view</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- The elevator between the lab (top floor) and the rotunda (basement). Run by elevator.js. -->
+<div class="elevator" id="elevator" hidden aria-hidden="true">
+  <div class="el-cab">
+    <div class="el-door el-l"></div><div class="el-door el-r"></div>
+    <div class="el-seam"></div>
+  </div>
+  <div class="el-head"><span class="el-arrow" id="elArrow">▼</span><span class="el-floor" id="elFloor">3</span><span class="el-name" id="elName">LAB</span></div>
+  <div class="el-panel"><b data-f="0">3</b><b data-f="1">2</b><b data-f="2">1</b><b data-f="3">B1</b></div>
+</div>
+
+<footer class="wrap mono">© <span id="yr"></span> Dhanesh Rajpurkar · Orlando, FL</footer>
+</body>
+</html>

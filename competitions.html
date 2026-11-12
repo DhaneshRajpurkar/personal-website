@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Competitions — Dhanesh Rajpurkar</title>
+<meta name="description" content="Hackathons and engineering competitions Dhanesh Rajpurkar has entered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><!-- loads in the background; never blocks the page -->
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    var d = document.documentElement;
+    try { var t = localStorage.getItem('theme'); if (t) d.dataset.theme = t; } catch (e) {}
+    try { if (window.top === window && sessionStorage.getItem('handNav') === 'on') d.classList.add('shell'); } catch (e) {}
+    try {
+      if (sessionStorage.getItem('viaDoor') === '1') {
+        sessionStorage.removeItem('viaDoor');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('arrive');
+      }
+    } catch (e) {}
+  })();
+</script>
+<script src="site.js" defer></script>
+<script src="gesture-core.js" defer></script>
+<script src="handcam.js" defer></script>
+<script src="handnav.js" defer></script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="competitions.html" aria-current="page">Competitions</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">◐ theme</button>
+  </div>
+</nav>
+
+<main>
+  <header class="page-head wrap">
+    <a class="back" href="index.html#hallway">← back to the rotunda doors</a>
+    <span class="num">DOOR 02</span>
+    <h1>Competitions</h1>
+  </header>
+
+  <section class="page-body wrap">
+    <ul class="timeline">
+      <li class="win">
+        <span class="when mono">Fall 2026</span>
+        <h3>Siemens Energy HackSTEM 2026 <span class="badge">Semi-finalist</span></h3>
+        <p>Solo entry: <b>OverKnight</b>, a proposal for growing Florida's power grid reliably while keeping energy affordable. Written as a full engineering proposal — root-cause analysis, technical approach, business case, risks, and implementation plan.</p>
+      </li>
+      <li>
+        <span class="when mono">Fall 2026</span>
+        <h3>Nebius × NVIDIA Global AI Hackathon</h3>
+        <p>Built the hurricane forecast engine for the Natural Disaster Ecosystem with a teammate.</p>
+      </li>
+      <li>
+        <span class="when mono">Oct 2026</span>
+        <h3>NASA Space Apps Challenge</h3>
+        <p>A web app that harmonizes MODIS and VIIRS satellite fire-hotspot records into a single burning-activity calendar.</p>
+      </li>
+      <li>
+        <span class="when mono">Fall 2026</span>
+        <h3>AI@UCF Semester Sprint</h3>
+        <p>Backend for Medicinal Magician, a clinical decision-support app.</p>
+      </li>
+      <!-- TODO: add ISSDC entry (year + what your team built) -->
+    </ul>
+  </section>
+
+  <div class="wrap">
+    <div class="pager">
+      <a class="btn" href="projects.html" data-nav="prev"><small>previous door</small>← Projects</a>
+      <a class="btn" href="resume.html" data-nav="next"><small>next door</small>Resume →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap mono">© <span id="yr"></span> Dhanesh Rajpurkar · Orlando, FL</footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resume — Dhanesh Rajpurkar</title>
+<meta name="description" content="Education, skills, and experience of Dhanesh Rajpurkar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><!-- loads in the background; never blocks the page -->
+<link rel="stylesheet" href="styles.css">
+<script>
+  (function () {
+    var d = document.documentElement;
+    try { var t = localStorage.getItem('theme'); if (t) d.dataset.theme = t; } catch (e) {}
+    try { if (window.top === window && sessionStorage.getItem('handNav') === 'on') d.classList.add('shell'); } catch (e) {}
+    try {
+      if (sessionStorage.getItem('viaDoor') === '1') {
+        sessionStorage.removeItem('viaDoor');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('arrive');
+      }
+    } catch (e) {}
+  })();
+</script>
+<script src="site.js" defer></script>
+<script src="resume-viewer.js" defer></script>
+<script src="gesture-core.js" defer></script>
+<script src="handcam.js" defer></script>
+<script src="handnav.js" defer></script>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="resume.html" aria-current="page">Resume</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">◐ theme</button>
+  </div>
+</nav>
+
+<main>
+  <header class="page-head wrap">
+    <a class="back" href="index.html#hallway">← back to the rotunda doors</a>
+    <span class="num">DOOR 03</span>
+    <h1>Resume</h1>
+  </header>
+
+  <section class="page-body wrap">
+    <!-- An interactive resume viewer (resume-viewer.js). To update it, replace resume.pdf: nothing else changes. -->
+    <div class="rv" id="resumeViewer">
+      <div class="rv-bar">
+        <span class="rv-name mono">Dhanesh_Rajpurkar_Resume.pdf</span>
+        <div class="rv-tools">
+          <button type="button" class="rv-btn" data-act="out" aria-label="Zoom out">−</button>
+          <span class="rv-zoom mono" id="rvZoom">100%</span>
+          <button type="button" class="rv-btn" data-act="in" aria-label="Zoom in">+</button>
+          <button type="button" class="rv-btn wide" data-act="fit" aria-label="Fit to width">Fit</button>
+          <button type="button" class="rv-btn" data-act="full" aria-label="Full screen">⛶</button>
+          <a class="rv-btn wide" href="resume.pdf" target="_blank" rel="noopener" aria-label="Open the PDF in a new tab">Open ↗</a>
+          <a class="rv-btn wide primary" href="resume.pdf" download="Dhanesh_Rajpurkar_Resume.pdf">Download ↓</a>
+        </div>
+      </div>
+      <div class="rv-stage" id="rvStage" tabindex="0" aria-label="Resume, scroll or drag to move around">
+        <div class="rv-pages" id="rvPages">
+          <!-- shown until the live viewer loads, and kept if it can't (e.g. opened straight from your computer) -->
+          <div class="rv-page rv-fallback"><img src="media/resume-page.webp" alt="Dhanesh Rajpurkar resume, page 1" width="1275" height="1650">
+            <a class="rv-link" style="left:18.8%;top:9.2%;width:31.3%;height:1.6%" href="https://www.linkedin.com/in/dhanesh-rajpurkar-28335b420/" target="_blank" rel="noopener" aria-label="LinkedIn"></a>
+            <a class="rv-link" style="left:58.6%;top:9.2%;width:26.8%;height:1.6%" href="https://github.com/DhaneshRajpurkar" target="_blank" rel="noopener" aria-label="GitHub"></a>
+          </div>
+        </div>
+      </div>
+      <p class="rv-hint mono">scroll or drag to move · pinch / ctrl + scroll to zoom · links are clickable</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="pager">
+      <a class="btn" href="achievements.html" data-nav="prev"><small>previous door</small>← Achievements</a>
+      <a class="btn" href="contact.html" data-nav="next"><small>next door</small>Contact →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap mono">© <span id="yr"></span> Dhanesh Rajpurkar · Orlando, FL</footer>
+</body>
+</html>
