@@ -199,6 +199,9 @@
 
   function frame(now) {
     if (ended) return;
+    try { step(now); } catch (err) { console.warn('intro skipped:', err); done(); }
+  }
+  function step(now) {
     if (start === null) start = now;
     if (failed) return done();
     if (!ready && now - start > T.sky) start = now - T.sky;   // drawings not ready yet: hold on the sky a moment longer
@@ -276,7 +279,9 @@
   let ready = false, failed = false;
   const load = n => new Promise(res => {
     const im = new Image(); im.src = `media/${n}.webp`;
-    (im.decode ? im.decode() : new Promise((y, x) => { im.onload = y; im.onerror = x; }))
+    const loaded = new Promise((y, x) => { im.onload = y; im.onerror = x; });
+    // decode() can stall in some browsers: whichever finishes first wins, and give up on one image after 8 s
+    Promise.race([im.decode ? im.decode().catch(() => loaded) : loaded, new Promise((_, x) => setTimeout(x, 8000))])
       .then(() => window.createImageBitmap ? createImageBitmap(im).catch(() => im) : im)
       .then(b => { imgs[n] = b; res(true); }, () => res(false));
   });
@@ -285,6 +290,9 @@
     await Promise.all([0, 1, 2, 3].map(async () => { while (q.length) out.push(await load(q.shift())); }));
     if (out.includes(false)) failed = true; else ready = true;
   })();
-  setTimeout(() => { if (!ready) failed = true; }, 9000);          // very slow connection: go straight to the unlock
+  setTimeout(() => { if (!ready) { failed = true; done(); } }, 9000);   // very slow connection: go straight to the unlock
+  // safety net: whatever happens (a stuck tab, an old browser, an error), never leave visitors on a black screen
+  const total = T.sky + T.book + T.glow + T.dive;
+  setTimeout(() => done(), total + 9000);
   raf = requestAnimationFrame(frame);
 })();
