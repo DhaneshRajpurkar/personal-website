@@ -5,7 +5,7 @@
      • a CARD on the Projects page (title, label, summary, tools), and
      • its own ARTICLE PAGE at  project.html?p=<id>  — the full story, with paragraphs, lists and pictures.
        Link straight to it from your resume or LinkedIn, e.g.
-       https://dhaneshrajpurkar.github.io/project.html?p=transponder
+       https://dhaneshr.com/project.html?p=transponder
 
    ADD A PROJECT (about 5 minutes)
      1. Make a folder for its pictures:  media/projects/<id>/        (e.g. media/projects/solar-tracker/)

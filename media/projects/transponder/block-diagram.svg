@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#34c5ae"/></marker><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e9a24a"/></marker><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern></defs>
+<rect width="960" height="420" rx="14" fill="#0f1418"/><rect width="960" height="420" rx="14" fill="url(#g)"/>
+<text x="24" y="34" fill="#e9a24a" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="13" letter-spacing="1.5">TRANSPONDER · HARDWARE</text>
+<rect x="24" y="70" width="150" height="64" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="99.0" y="98.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">USB-C</text>
+<text x="99.0" y="118.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">panel mount</text>
+<rect x="214" y="70" width="170" height="64" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="299.0" y="98.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Charger</text>
+<text x="299.0" y="118.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">BQ24074</text>
+<rect x="214" y="190" width="170" height="64" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="299.0" y="218.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">LiPo battery</text>
+<text x="299.0" y="238.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">3.7 V · 2000 mAh</text>
+<rect x="424" y="70" width="170" height="64" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="509.0" y="98.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Regulator</text>
+<text x="509.0" y="118.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">TPS63031 buck-boost</text>
+<rect x="424" y="190" width="170" height="90" rx="10" fill="#161d23" stroke="#34c5ae" stroke-width="2"/>
+<text x="509.0" y="231.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Pico 2 W</text>
+<text x="509.0" y="251.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">RP2350</text>
+<rect x="680" y="60" width="256" height="70" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="808.0" y="91.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">5&quot; touchscreen</text>
+<text x="808.0" y="111.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">Nextion NX8048P050</text>
+<rect x="680" y="160" width="256" height="60" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="808.0" y="186.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Real-time clock</text>
+<text x="808.0" y="206.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">DS3231</text>
+<rect x="680" y="250" width="256" height="60" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="808.0" y="276.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Haptic driver + LRA</text>
+<text x="808.0" y="296.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">DRV2605L</text>
+<rect x="214" y="316" width="170" height="64" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="299.0" y="344.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Your PC</text>
+<text x="299.0" y="364.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">via the USB-C port</text>
+<path d="M174 102.0L214 102.0" fill="none" stroke="#e9a24a" stroke-width="1.8" marker-end="url(#b)"/>
+<text x="194.0" y="94.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11">5 V</text>
+<path d="M299.0 134L299.0 190" fill="none" stroke="#e9a24a" stroke-width="1.8" marker-end="url(#b)"/>
+<path d="M384 102.0L424 102.0" fill="none" stroke="#e9a24a" stroke-width="1.8" marker-end="url(#b)"/>
+<text x="404.0" y="94.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11">power</text>
+<path d="M509.0 134L509.0 190" fill="none" stroke="#e9a24a" stroke-width="1.8" marker-end="url(#b)"/>
+<text x="517.0" y="166.0" text-anchor="start" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11">3.3 V</text>
+<path d="M594 235.0H637.0V95.0H680" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="637.0" y="87.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11">UART</text>
+<path d="M594 235.0H637.0V190.0H680" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="637.0" y="182.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11">I2C</text>
+<path d="M594 235.0H637.0V280.0H680" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="637.0" y="227.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11">I2C</text>
+<path d="M384 348.0H404.0V235.0H424" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="424" y="330" fill="#9aa3ad" font-size="13">USB data only, no Wi-Fi</text>
+</svg>

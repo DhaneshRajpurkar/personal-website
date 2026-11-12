@@ -1,0 +1,8 @@
+Project pictures go here, one folder per project, named after the project's "id" in projects-data.js:
+
+  media/projects/transponder/cover.jpg
+  media/projects/transponder/pcb-rev-b.jpg
+
+Then point to them from projects-data.js, e.g.  image: { src: "media/projects/transponder/pcb-rev-b.jpg", caption: "..." }
+Lowercase file names, no spaces. Keep photos under ~500 KB (export about 1600 px wide).
+The .svg diagrams in each folder are editable: open one in any text editor or in Figma/Inkscape.

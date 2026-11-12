@@ -1,0 +1,2 @@
+Put your Duck Race photos here, then reference them from projects-data.js, e.g.
+  image: { src: "media/projects/duck-race/ramp-down.jpg", caption: "..." }

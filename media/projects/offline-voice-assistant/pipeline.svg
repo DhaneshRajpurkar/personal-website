@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" font-family="ui-sans-serif, system-ui, 'Segoe UI', Roboto, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#34c5ae"/></marker><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e9a24a"/></marker><pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ffffff" stroke-opacity=".035"/></pattern></defs>
+<rect width="960" height="300" rx="14" fill="#0f1418"/><rect width="960" height="300" rx="14" fill="url(#g)"/>
+<text x="24" y="34" fill="#e9a24a" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="13" letter-spacing="1.5">OFFLINE VOICE ASSISTANT · VOICE LOOP</text>
+<rect x="24" y="110" width="120" height="70" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="84.0" y="141.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Mic</text>
+<text x="84.0" y="161.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">your voice</text>
+<rect x="184" y="110" width="140" height="70" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="254.0" y="141.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Silero VAD</text>
+<text x="254.0" y="161.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">is someone</text>
+<text x="254.0" y="177.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">talking?</text>
+<rect x="364" y="110" width="150" height="70" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="439.0" y="141.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">faster-whisper</text>
+<text x="439.0" y="161.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">speech → text</text>
+<rect x="554" y="110" width="150" height="70" rx="10" fill="#161d23" stroke="#34c5ae" stroke-width="2"/>
+<text x="629.0" y="141.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Llama 3.2 3B</text>
+<text x="629.0" y="161.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">local LLM</text>
+<rect x="744" y="110" width="120" height="70" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="804.0" y="141.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Piper</text>
+<text x="804.0" y="161.0" text-anchor="middle" fill="#9aa3ad" font-family="'JetBrains Mono', ui-monospace, Consolas, monospace" font-size="11.5">text → speech</text>
+<rect x="744" y="214" width="120" height="52" rx="10" fill="#161d23" stroke="#2b3640" stroke-width="1.5"/>
+<text x="804.0" y="246.0" text-anchor="middle" fill="#e8ebee" font-size="16" font-weight="500">Speaker</text>
+<path d="M144 145.0L184 145.0" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M324 145.0L364 145.0" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M514 145.0L554 145.0" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M704 145.0L744 145.0" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M804.0 180L804.0 214" fill="none" stroke="#34c5ae" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="24" y="262" fill="#9aa3ad" font-size="13">Everything runs from a USB stick: no internet, no account, nothing leaves the PC.</text>
+</svg>

@@ -138,6 +138,11 @@ Buy something like `dhaneshrajpurkar.com` (Cloudflare, Porkbun, Namecheap). In S
 - Put the URL in your LinkedIn "Website" field, GitHub profile, resume header, and email signature.
 - Submit it in Google Search Console so it gets indexed faster.
 
-
-
-https://dhaneshrajpurkar.github.io/personal-website/ 
+## Hosting on Vercel at dhaneshr.com
+The site is plain static files (no build step), so Vercel serves it as-is.
+1. Put the files in a GitHub repo (any name), then in Vercel: Add New → Project → import that repo.
+   Framework preset: **Other**. Build command: none. Output directory: leave as the repo root. Deploy.
+2. Project → Settings → Domains → add `dhaneshr.com` (and `www.dhaneshr.com`, set to redirect to the main one).
+3. If you bought the domain through Vercel, DNS is automatic. Otherwise, at your registrar add the DNS records
+   Vercel shows on that Domains page (an A record for `@` and a CNAME for `www`). HTTPS is set up automatically.
+4. Every push to the repo redeploys the site.
