@@ -6,6 +6,7 @@
 // The head motion uses 34 frames: his 4 photos plus in-between frames made with optical flow.
 // Click or any key skips it. Visitors who prefer reduced motion never see it.
 (function () {
+  window.__reelStarted = true;
   const root = document.documentElement;
   const reel = document.getElementById('reel');
   if (!reel) return;
@@ -43,15 +44,15 @@
   // pan: how far down the sky (0–1) · hill: dark hill shown (0–1) · ink: how much the sketch has drawn in (0–1)
   // frame: which head frame · land: how much of the landscape is still visible
   const pages = [];
-  for (let i = 0; i < 12; i++) pages.push({ pan: ease((i + 1) / 12), dur: lerp(120, 62, i / 11) });
-  pages.push({ pan: 1, hill: .5, dur: 62 }, { pan: 1, hill: 1, dur: 62 });
-  for (const ink of [.25, .5, .75, 1]) pages.push({ pan: 1, hill: 1, ink, frame: 0, dur: 62 });
-  for (let f = 1; f < N - 1; f++) pages.push({ pan: 1, hill: clamp(1 - f / 8), ink: 1, frame: f, land: clamp(1 - f / 14), dur: 62 });
-  pages.push({ pan: 1, hill: 0, ink: 1, frame: N - 1, land: 0, ring: true, dur: 62 });
+  for (let i = 0; i < 12; i++) pages.push({ pan: ease((i + 1) / 12), dur: lerp(70, 40, i / 11) });
+  pages.push({ pan: 1, hill: .5, dur: 40 }, { pan: 1, hill: 1, dur: 40 });
+  for (const ink of [.25, .5, .75, 1]) pages.push({ pan: 1, hill: 1, ink, frame: 0, dur: 40 });
+  for (let f = 1; f < N - 1; f++) pages.push({ pan: 1, hill: clamp(1 - f / 8), ink: 1, frame: f, land: clamp(1 - f / 14), dur: 40 });
+  pages.push({ pan: 1, hill: 0, ink: 1, frame: N - 1, land: 0, ring: true, dur: 40 });
   const pageAt = []; { let a = 0; for (const p of pages) { pageAt.push(a); a += p.dur; } }
   const FLIPBOOK = pageAt[pageAt.length - 1] + pages[pages.length - 1].dur;
 
-  const T = { sky: 1300, book: FLIPBOOK, glow: 1000, dive: 1400 };
+  const T = { sky: 700, book: FLIPBOOK, glow: 600, dive: 900 };
   const at = {}; { let a = 0; for (const k in T) { at[k] = a; a += T[k]; } at.end = a; }
 
   // ---------- layout + the painted world (sky on top, valley at the bottom) ----------
@@ -266,7 +267,11 @@
     reel.classList.add('out');
     root.classList.remove('reel');                       // lets the ring unlock in #intro start
     dispatchEvent(new Event('reeldone'));
-    setTimeout(() => reel.remove(), 500);
+    setTimeout(() => {
+      reel.remove();
+      for (const k in imgs) { try { imgs[k].close && imgs[k].close(); } catch (e) {} delete imgs[k]; }   // give the drawings' memory back
+      world = null;
+    }, 500);
   }
   const skip = e => { if (!ended) { e.stopImmediatePropagation(); e.preventDefault(); done(); } };
   reel.addEventListener('click', skip);
@@ -290,9 +295,9 @@
     await Promise.all([0, 1, 2, 3].map(async () => { while (q.length) out.push(await load(q.shift())); }));
     if (out.includes(false)) failed = true; else ready = true;
   })();
-  setTimeout(() => { if (!ready) { failed = true; done(); } }, 9000);   // very slow connection: go straight to the unlock
+  setTimeout(() => { if (!ready) { failed = true; done(); } }, 4000);   // very slow connection: go straight to the unlock
   // safety net: whatever happens (a stuck tab, an old browser, an error), never leave visitors on a black screen
   const total = T.sky + T.book + T.glow + T.dive;
-  setTimeout(() => done(), total + 9000);
+  setTimeout(() => done(), total + 4000);
   raf = requestAnimationFrame(frame);
 })();

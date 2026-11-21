@@ -18,11 +18,30 @@
     try { var t = localStorage.getItem('theme'); if (t) d.dataset.theme = t; } catch (e) {}
     try { if (window.top === window && sessionStorage.getItem('handNav') === 'on') d.classList.add('shell'); } catch (e) {}
     var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Lite mode: weaker computers skip the opening scenes and the live 3D lab, so the page shows up right away.
+    // ?full in the address forces the full version; ?lite forces the light one.
+    var lite = false;
+    try {
+      var mem = navigator.deviceMemory, cores = navigator.hardwareConcurrency, net = navigator.connection;
+      if ((mem && mem <= 4) || (cores && cores <= 4) || (net && (net.saveData || /2g/.test(net.effectiveType || '')))) lite = true;
+      if (localStorage.getItem('lite') === '1') lite = true;          // set by the 3D lab after it ran too slowly here
+      if (/[?&]lite\b/.test(location.search)) lite = true;
+      if (/[?&]full\b/.test(location.search)) { lite = false; localStorage.removeItem('lite'); }
+    } catch (e) {}
+    if (lite) { d.classList.add('lite'); reduce = true; }            // lite = treat like reduced motion: no intro
     var seen = false;
     try { seen = sessionStorage.getItem('introSeen') === '1'; sessionStorage.removeItem('viaDoor'); } catch (e) {}
     if (!seen && !reduce && !d.classList.contains('shell')) d.classList.add('intro'); // lock intro plays once per visit
     var reelSeen = false; try { reelSeen = sessionStorage.getItem('reelSeen') === '1'; } catch (e) {}
     if (d.classList.contains('intro') && !reelSeen) d.classList.add('reel');           // space reel plays before it
+    // Fallback: the black reel screen is plain HTML/CSS, but drawing it and skipping it need reel.js.
+    // If reel.js hasn't started (slow or blocked download), let a click/key skip anyway, and give up after 6 s.
+    function bail() { if (window.__reelStarted) return; d.classList.remove('reel', 'intro');
+      try { sessionStorage.setItem('reelSeen', '1'); sessionStorage.setItem('introSeen', '1'); } catch (e) {} }
+    if (d.classList.contains('intro')) {
+      addEventListener('click', bail, true); addEventListener('keydown', bail, true);
+      setTimeout(bail, 6000);
+    }
   })();
 </script>
 <script src="site.js" defer></script>

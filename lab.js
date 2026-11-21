@@ -12,6 +12,7 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const T3 = 'https://cdn.jsdelivr.net/npm/three@0.160.0/';
 
+  if (root.classList.contains('lite')) { host.classList.add('lab-fallback'); return; }   // weaker computer: keep the painted background
   const begin = () => load().catch(err => { console.warn('3D lab unavailable:', err); host.classList.add('lab-fallback'); });
   // don't compete with the opening scene for the computer's attention: load once it's done
   if (root.classList.contains('reel')) addEventListener('reeldone', () => setTimeout(begin, 300), { once: true });
@@ -480,7 +481,7 @@
         if (now - sampleFrom > 1500 && samples.length >= 4) {
           const med = samples.slice(1).sort((x, y) => x - y)[Math.floor((samples.length - 1) / 2)];
           if (med > Math.max(1000 / 40, minGap * 1.3) && tier > 0) { tier--; applyTier(); }
-          else if (med > 100 && tier === 0) { still = true; host.dataset.quality = 'still'; }
+          else if (med > 100 && tier === 0) { still = true; host.dataset.quality = 'still'; try { localStorage.setItem('lite', '1'); } catch (e) {} }   // too slow even at lowest quality: next visit uses lite mode
           samples = [];
         }
       }

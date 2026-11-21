@@ -33,7 +33,7 @@
       };
       // if the space reel plays first, the lock's clock starts only when the reel ends
       const startLock = () => setTimeout(() => finish(false), 2650);
-      if (root.classList.contains('reel')) addEventListener('reeldone', startLock, { once: true });
+      if (root.classList.contains('reel')) addEventListener('reeldone', () => setTimeout(() => finish(false), 1900), { once: true });   // after the reel, a shorter unlock
       else startLock();
       intro.addEventListener('click', () => finish(true));
       addEventListener('keydown', () => { if (!root.classList.contains('reel')) finish(true); });
